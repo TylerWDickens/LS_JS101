@@ -1,6 +1,7 @@
 const readline = require('readline-sync');
 
 function prompt(msg) {
+  // eslint-disable-next-line no-console
   console.log(`=> ${msg}`);
 }
 
