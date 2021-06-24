@@ -1,0 +1,31 @@
+
+{
+  "en": {
+    "welcome": "Welcome to Calculator! Enter your name:",
+    "hiName": "Welcome",
+    "validName": "Make sure to enter a valid name.",
+    "firstNum": "What's the first number?",
+    "secondNum": "What's the second number?",
+    "validNum": "Hmm.. that doesn't seem like a valid number",
+    "operation": "What operation would you like to perform? \n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "validOp": "Must choose 1, 2, 3, or 4",
+    "loop": "Would you like to run the program again? (y/n)",
+    "goodbye": "Goodbye",
+    "validLoop": "Must enter y (yes) or n (no)",
+    "result": "The result is:"
+  },
+  "fr": {
+    "welcome": "Bienvenu a Calculator! Entrer votre nom",
+    "hiName": "Bonjour",
+    "validName": "Ensurer d'entrer un nom valide",
+    "firstNum": "Quel est le premier nombre?",
+    "secondNum": "Quel est le deuxième nombre?",
+    "validNum": "Ensure d'entre un nombre",
+    "operation": "Selecter un operation. \n1) Addition 2) Soustraction 3) Multiplication 4) Division",
+    "validOp": "Devrait choisir 1, 2, 3, or 4",
+    "loop": "Souhaitez-vous exécuter à nouveau le programme oui/non (y/n)",
+    "goodbye": "Au revoir",
+    "validLoop": "Devrait choisir y (oui) or n (no)",
+    "result": "Le résultat est:"
+  }
+}

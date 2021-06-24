@@ -1,10 +1,20 @@
 /* eslint-disable default-case */
 /* eslint-disable no-case-declarations */
 const readline = require('readline-sync');
+const MESSAGES = require('./calculator_messages.json');
+const LANGUAGE = 'fr';
 
-function prompt(msg) {
+function prompt(msg , name) {
   // eslint-disable-next-line no-console
-  console.log(`=> ${msg}`);
+  if (name === undefined) {
+    console.log(`=> ${msg}`);
+  } else{
+    console.log(`=> ${msg} ${name}`)
+  } 
+}
+
+function messages(message, lang='en') {
+  return MESSAGES[lang][message];
 }
 
 function invalidNumber(number) {
@@ -12,27 +22,25 @@ function invalidNumber(number) {
 }
 
 function calculator() {
-  prompt('Welcome to Calculator!');
-
   // Ask the user for the first number.
-  prompt("What's the first number?");
+  prompt(messages('firstNum', LANGUAGE));
   let number1 = readline.question();
   while (invalidNumber(number1)) {
-    prompt('Hmm.. that doesn\'t seem like a valid number');
+    prompt(messages('validNum', LANGUAGE));
     number1 = readline.question();
   }
   // Ask the user for the second number.
-  prompt("What's the second number?");
+  prompt(messages('secondNum', LANGUAGE));
   let number2 = readline.question();
   while (invalidNumber(number2)) {
-    prompt('Hmm.. that doesn\'t seem like a valid number');
+    prompt(messages('validNum', LANGUAGE));
     number2 = readline.question();
   }
   // Ask the user for an operation to perform.
-  prompt('What operation would you like to perform? \n1) Add 2) Subtract 3) Multiply 4) Divide');
+  prompt(messages('operation', LANGUAGE));
   let operation = readline.question();
   while (!['1', '2', '3', '4'].includes(operation)) {
-    prompt('Must choose 1, 2, 3, or 4');
+    prompt(messages('validOp', LANGUAGE));
     operation = readline.question();
   }
   // Perform the operation on the two numbers
@@ -52,7 +60,7 @@ function calculator() {
       break;
   }
   // Print the result to the terminal
-  prompt(`The result is: ${output}`);
+  prompt(`${messages('result', LANGUAGE)} ${output}`);
 }
 
 function reboot(select) {
@@ -60,21 +68,23 @@ function reboot(select) {
     case 'y':
       prompt('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
       calculator();
-      prompt('Would you like to run the program again? (y/n)');
+      prompt(messages('loop', LANGUAGE));
       const runAgain = readline.question();
       reboot(runAgain);
       break;
     case 'n':
-      prompt('Goodbye!');
+      prompt(`${messages('goodbye', LANGUAGE)} ${name}!`);
       break;
     default:
-      prompt('Must enter y (yes) or n (no)');
+      prompt(messages('validLoop', LANGUAGE));
       const newChoice = readline.question().toLowerCase();
       reboot(newChoice);
   }
 }
-
+prompt(messages('welcome', LANGUAGE));
+  let name = readline.question();
+prompt(messages('hiName', LANGUAGE), name);
 calculator();
-prompt('Would you like to run the program again? (y/n)');
+prompt(messages('loop', LANGUAGE));
 const rerun = readline.question().toLowerCase();
 reboot(rerun);
