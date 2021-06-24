@@ -36,7 +36,9 @@ function loanRate(unit, rate) {
 }
 
 function invalidNumber(number) {
-  return (number.trimStart()) === '' || Number.isNaN(Number(number));
+  return (number.trimStart()) === ''
+          || Number.isNaN(Number(number))
+          || number < 0;
 }
 
 function loanMonths(unit, duration) {
