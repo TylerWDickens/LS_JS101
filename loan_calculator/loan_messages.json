@@ -6,6 +6,8 @@
   "valid_unit":"Enter either 'y' for years or 'm' for months:", 
   "loan_duration":"Please enter your loan duration:",
   "monthly payment":"Your monthly payment is:",
-  "valid_number": "Please enter a number:"
+  "valid_number": "Please enter a number:",
+  "loop":"Would you like to perfom another calculation? Enter 'y' for yes, 'n' for no.",
+  "goodbye":"Program finished. Goodbye!"
 
 }
