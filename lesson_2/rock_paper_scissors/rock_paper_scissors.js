@@ -116,7 +116,10 @@ while (true) {
 
   displayWinner(choice, computerChoice);
 
-  prompt(`Current score is User: ${userScore} Computer: ${computerScore}`);
-
+  // Breaks when a player hit 5 points
   if (scoreKeeper(userScore, computerScore) === false) break;
+
+  // If the win condition is not met, keep playing and counting as usual.
+
+  prompt(`Current score is User: ${userScore} Computer: ${computerScore}`);
 }
